@@ -22,13 +22,22 @@ class Curso:
 
     def agregar_alumnos(self , alumno):
         self.alumnos.append(alumno)
+        return f"Alumno {alumno.nombre} agregado exitosamente."
 
     def listar_alumnos(self):
-        print(self.alumnos)
+        for alumno in self.alumnos:
+            print(f"Nombre: {alumno.nombre}, ID: {alumno.id}") # Estos atributos son de la instancia de Alumno.
 
 
 alumno_1 = Alumno("Conrado" , 1 )
 curso_1 = Curso("Primer Curso creado")
 
-curso_1_info = curso_1.agregar_alumnos(alumno_1)
-print(f"Los alumnos agregados son {curso_1_info}")
+#Solo agrego un alumno
+curso_1.agregar_alumnos(alumno_1)
+
+#Agrego e imprimo asignando el return a una variable
+mensaje = curso_1.agregar_alumnos(alumno_1)
+print(mensaje)
+# Listar alumnos
+print(f"Alumnos en el curso {curso_1.nombre_curso}:")
+curso_1.listar_alumnos()
