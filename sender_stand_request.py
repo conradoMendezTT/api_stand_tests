@@ -24,6 +24,9 @@ def post_products_kits(products_ids):
                           headers= data.headers)
 
 
+print("What we are printing is: ")
+print(get_docs())
+
 response = get_user_table()
 print(response.status_code)
 
