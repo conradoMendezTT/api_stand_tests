@@ -22,27 +22,3 @@ def post_products_kits(products_ids):
     return  requests.post(configuration.URL_SERVICE + configuration.PRODUCTS_KITS_PATH,
                           json= products_ids,
                           headers= data.headers)
-
-
-print("What we are printing is: ")
-print(get_docs())
-
-response = get_user_table()
-print(response.status_code)
-
-print("Starting from here with status and request URL")
-response_logs = get_logs(50).url
-print("La url utilizada a la que le estamos haciendo un request de los logs es: " , response_logs)
-
-
-print("Starting from here with USER")
-response = post_new_user(data.user_body)
-print(response.status_code)
-print(response.ok)
-print(response.json())
-
-
-print("Starting from here with KITS")
-response = post_products_kits(data.product_ids)
-print(response.status_code)
-print(response.json())
